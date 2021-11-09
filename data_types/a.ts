@@ -26,6 +26,11 @@ let an : any = [1, 2, 3]
 an = 'an'
 console.log(an, Array.isArray(an))
 
+let arr2 : number[] = []
+
+const obj : {[key : string] : string | number} = {"A":4, "B":5}
+console.log(obj)
+
 let unk : unknown ;
 unk = 4
 unk = 'unk'
