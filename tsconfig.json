@@ -103,5 +103,8 @@
   },
   "src" : [
     "./node_modules"
-  ]
+  ],
+  // "files" : [
+      // override and can include files of folder which are in exclude
+  // ]
 }
