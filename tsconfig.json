@@ -23,6 +23,10 @@
     // "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */
     // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
 
+
+    // "module" : "none",
+    
+
     /* Modules */
     "module": "commonjs",                                /* Specify what module code is generated. */
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
@@ -98,6 +102,6 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "src" : [
-    "./ts/"
+    "./node_modules"
   ]
 }
