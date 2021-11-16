@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const { getConfigFileParsingDiagnostics } = require('typescript');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -56,15 +57,15 @@ const config = {
 
 module.exports = () => {
     if (isProduction) {
-        config.mode = 'production';
-        
-        config.plugins.push(new MiniCssExtractPlugin());
-        
-        
-        config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
-        
-    } else {
-        config.mode = 'development';
-    }
+        config.mode = "production";
+        config.output.filename = "index.[contenthash].js";
+        config.optimization = {
+          minimize: true,
+        };
+      } else {
+        config.mode = "development";
+        config.devtool = "inline-source-map";
+        config.output.filename = "index.js";
+      }
     return config;
 };
