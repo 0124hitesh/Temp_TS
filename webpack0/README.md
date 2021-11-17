@@ -22,6 +22,8 @@ npm i webpack-cli webpack
 
 npx webpack-cli init
 
+npm run build
+
  Which of the following JS solutions do you want to use? Typescript
  
 ? Do you want to use webpack-dev-server? Yes
