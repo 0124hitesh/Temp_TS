@@ -23,5 +23,8 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0",
     "workbox-webpack-plugin": "^6.4.1"
+  },
+  "dependencies": {
+    "pixi.js": "^6.2.0"
   }
 }

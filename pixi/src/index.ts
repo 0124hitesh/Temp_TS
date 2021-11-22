@@ -1,64 +1,60 @@
-import { Application, Graphics, Text } from "pixi.js";
+import { Application, Sprite } from "pixi.js";
 
-window.addEventListener("load", () => {
-    const app = new Application({
-        width: 600,
-        height: 600,
-        antialias: true,
-        // resolution: 2,
-        view: document.getElementById('can') as HTMLCanvasElement,
-    })
+const app = new Application({
+    width: 1000,
+    height: 1000,
+    resolution: 1,
+    antialias: true
+});
 
-    const g = new Graphics();
-    app.stage.addChild(g)
-    g.beginFill(0x03fce3);
-    g.drawRect(0, 0, 100, 100);
-    g.endFill();
+document.body.appendChild(app.view)
 
-    g.beginFill(0x00ff00);
-    // x, y, radius
-    g.drawCircle(150, 50, 50);
-    g.endFill();
+const t: Sprite[] =[]
+const count = 10;
 
-    g.beginFill(0x0000ff);
-    // x, y, width, length
-    g.drawEllipse(250, 50, 50, 60);
-    g.endFill();
+app.loader.add('a', "https://image.shutterstock.com/image-illustration/beautiful-anime-boy-character-background-260nw-1986627173.jpg")
+.add('b', "https://cdn.vox-cdn.com/thumbor/7koeuy8-o1IztfPtP42ltVRySi0=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19661987/acastro_190807_3592_best_anime_2019_0001__1_.jpg")
+.load((l, r) => {
+    for(let i=0; i<count; ++i){
 
-    // lineWidth, color, color-alpha
-    g.lineStyle(5, 0xffff00, 10);
-    g.moveTo(0, 0);
-    g.lineTo(400, 100);
-    g.lineTo(0, 200);
-    g.lineTo(0, 0);
-    g.closePath();
+        //  if dont want to use any in img.direction --
+        // const img = new Temp(r["c"].texture)
 
-    g.lineStyle(20);
-    g.beginFill(0xffffff, 0.25);
-    // x, y, width, height, border-radius
-    g.drawRoundedRect(450, 50, 100, 100, 30);
-    g.endFill();
+        const img = new Sprite(r["b"].texture)
+        img.anchor.set(.5);
+        img.scale.set(.8 + Math.random()*0.3)
 
-    const text = new Text("Helloo")
-    text.x = app.screen.width/2
-    text.y = app.screen.height/2
-    text.anchor.set(.5);
-    text.style.fill = 0xff0000
-    text.style.fontSize = 50
-    app.stage.addChild(text)
+        img.x = Math.random() * app.screen.width;
+        img.y = Math.random() * app.screen.height;
 
-    const g2 = new Graphics()
-    app.stage.addChild(g2)
-    g2.lineStyle(0);
-    g2.beginFill(0xffffff, 0.5);
-    g2.drawPolygon([0,0, 500,300, 200,350, 50,250]);
-    g2.endFill();
+        img.tint = Math.random() * 0xFFFFFF;
 
-    // The center of rotation, scaling, and skewing for this display object in its local space. 
-    g2.pivot.set(app.screen.width / 2, app.screen.width / 2);
-    g2.position.set(200, 100);
-    app.ticker.add((delta) => {
-        g2.rotation += Math.PI / 200 * delta;
-    });
+        // img.direction = Math.random() * Math.PI * 2; -- gives error in typescript
+        (<any>img).direction = Math.random() * Math.PI * 2;
+        (<any>img).turningSpeed = Math.random() - 0.8;
+        (<any>img).speed = 2 + Math.random() * 2;
 
-})
+        t.push(img);
+        app.stage.addChild(img);
+    }
+});
+
+
+// ticker -- call function 60 times in a second
+app.ticker.add(() => {
+    // iterate through the images and update their position
+    for (let i = 0; i < t.length; i++) {
+        const img = t[i];
+        (<any>img).direction += (<any>img).turningSpeed * 0.01;
+        img.x += Math.sin((<any>img).direction) * (<any>img).speed;
+        img.y += Math.cos((<any>img).direction) * (<any>img).speed;
+        img.rotation = -(<any>img).direction - Math.PI / 2;
+    }
+});
+
+
+// class Temp extends Sprite{
+//     public direction: number;
+//     public turningSpeed: number;
+//     public speed: number
+// }
