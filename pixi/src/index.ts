@@ -1,4 +1,4 @@
-import { Application, Sprite } from "pixi.js";
+import { Application, Sprite, Rectangle } from "pixi.js";
 
 const app = new Application({
     width: 1000,
@@ -39,6 +39,12 @@ app.loader.add('a', "https://image.shutterstock.com/image-illustration/beautiful
     }
 });
 
+const imgBoundsPadding = 100;
+const imgBounds = new Rectangle(-imgBoundsPadding,
+    -imgBoundsPadding,
+    app.screen.width + imgBoundsPadding * 2,
+    app.screen.height + imgBoundsPadding * 2);
+
 
 // ticker -- call function 60 times in a second
 app.ticker.add(() => {
@@ -49,6 +55,18 @@ app.ticker.add(() => {
         img.x += Math.sin((<any>img).direction) * (<any>img).speed;
         img.y += Math.cos((<any>img).direction) * (<any>img).speed;
         img.rotation = -(<any>img).direction - Math.PI / 2;
+
+        if (img.x < imgBounds.x) {
+            img.x += imgBounds.width;
+        } else if (img.x > imgBounds.x + imgBounds.width) {
+            img.x -= imgBounds.width;
+        }
+
+        if (img.y < imgBounds.y) {
+            img.y += imgBounds.height;
+        } else if (img.y > imgBounds.y + imgBounds.height) {
+            img.y -= imgBounds.height;
+        }
     }
 });
 
