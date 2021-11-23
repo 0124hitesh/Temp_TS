@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip</title>
+
+    <style>
+        #box{
+            position: absolute;
+            top: 50px;
+            left: 40%;
+            width: 300px;
+            height: 250px;
+            background: red;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        #front, #back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: 2s;
+            backface-visibility: hidden;
+        }
+        #front{
+            transform: perspective(1000px) rotateY(0deg);
+            z-index: 2;
+        }
+        #back{
+            transform: perspective(1000px) rotateY(180deg);
+        }
+        #box:hover #front{
+            transform: perspective(1000px) rotateY(-180deg);
+        }
+        #box:hover #back{
+            transform: perspective(1000px) rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="front">
+            <img src="https://image.shutterstock.com/image-illustration/beautiful-anime-boy-character-background-260nw-1986627173.jpg" alt="">
+
+        </div>
+
+        <div id="back">
+            <img src="https://cdn.vox-cdn.com/thumbor/7koeuy8-o1IztfPtP42ltVRySi0=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19661987/acastro_190807_3592_best_anime_2019_0001__1_.jpg" alt="">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -17,7 +17,7 @@ app.loader.add('a', "https://image.shutterstock.com/image-illustration/beautiful
 .load((l, r) => {
     for(let i=0; i<count; ++i){
 
-        //  if dont want to use any in img.direction --
+        //  if dont want to use "any" in img.direction --
         // const img = new Temp(r["c"].texture)
 
         const img = new Sprite(r["b"].texture)
