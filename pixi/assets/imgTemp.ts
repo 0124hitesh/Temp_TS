@@ -5,3 +5,5 @@ export class imgTemp extends Sprite{
         super(texture)
     }
 }
+
+// not used
