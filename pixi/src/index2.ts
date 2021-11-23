@@ -1,5 +1,5 @@
 import {Application, Sprite} from 'pixi.js'
-import { LoaderExam } from './loader'
+import { LoaderExam } from '../assets/loader'
 import {gsap} from 'gsap';
 
 const app = new Application({
@@ -15,7 +15,9 @@ document.body.appendChild(app.view)
 const loader = new LoaderExam()
 
 loader.start((l, r) => {
-    let img = new Sprite(r.a.texture)
+    // let img = new Sprite(r.a.texture)
+    let img = new Sprite(LoaderExam.get_Texture('a'))
+    
     app.stage.addChild(img)
     img.x = 100;
     img.y = 100;
