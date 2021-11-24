@@ -1,18 +1,19 @@
-import {Application, BitmapText, Sprite} from 'pixi.js';
+import {Application, BitmapText   } from "pixi.js"
 
-const app = new Application({
-    width: 1200,
-    height: 500,
-    resolution: 1,
-    antialias: true
-})
+const app = new Application({ backgroundColor: 0x1099bb });
+document.body.appendChild(app.view);
 
-document.body.appendChild(app.view)
+app.loader
+    .add('desyrel', 'https://pixijs.io/examples/examples/assets/bitmap-font/desyrel.xml')
+    .load(onAssetsLoaded);
 
-app.loader.add('a', "../assets/download.jpg")
-.load((l, r) => {
-    const img = new Sprite(r['a'].texture);
-    img.position.set(10, 10)
+function onAssetsLoaded() {
+    const bitmapFontText = new BitmapText('bitmap fonts are supported!\nWoo yay!', { 
+        fontName: 'Desyrel', fontSize: 55, align: 'left' 
+    });
 
-    app.stage.addChild(img)
-})
+    bitmapFontText.x = 50;
+    bitmapFontText.y = 200;
+
+    app.stage.addChild(bitmapFontText);
+}
