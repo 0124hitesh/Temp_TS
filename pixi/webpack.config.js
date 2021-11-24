@@ -13,13 +13,15 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
-    entry: './src/index2.ts',
+    entry: './src/bitmapFont.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
         open: true,
-        host: 'localhost',
+        host: "localhost",
+        port: 8080,
+        compress: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -42,7 +44,7 @@ const config = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
+                type: 'asset/resource',
             },
 
             // Add your rules for custom modules here
@@ -56,15 +58,15 @@ const config = {
 
 module.exports = () => {
     if (isProduction) {
-        config.mode = 'production';
-        
-        config.plugins.push(new MiniCssExtractPlugin());
-        
-        
-        config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
-        
-    } else {
-        config.mode = 'development';
-    }
+        config.mode = "production";
+        config.output.filename = "index.[contenthash].js";
+        config.optimization = {
+          minimize: true,
+        };
+      } else {
+        config.mode = "development";
+        config.devtool = "inline-source-map";
+        config.output.filename = "index.js";
+      }
     return config;
 };
