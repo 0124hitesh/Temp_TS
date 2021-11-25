@@ -13,7 +13,7 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
-    entry: './src/bitmapFont.ts',
+    entry: './src/test.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
@@ -44,7 +44,7 @@ const config = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset/resource',
+                type: 'asset',
             },
 
             // Add your rules for custom modules here
