@@ -27,8 +27,8 @@ function onAssetsLoaded() {
     g.beginFill(0xffffff, 1)
     g.drawRect(50, 50, 200, 200)
     g.endFill();
-    g.x = 50
-    g.y = 50
+    g.x = 0
+    g.y = 0
     app.stage.addChild(g)
 
     const cir = new Graphics();
@@ -48,8 +48,8 @@ function onAssetsLoaded() {
     })
 
     function showOnMove(e: any){
-        g.x = e.data.global.x - 100;
-        g.y = e.data.global.y - 100;
+        g.x = e.data.global.x - 150;
+        g.y = e.data.global.y - 150;
     }
 
     // app.stage.on("pointerup", () => {
