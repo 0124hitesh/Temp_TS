@@ -9,7 +9,9 @@ const app = new Application({
 
 document.body.appendChild(app.view);
 
-app.loader.add('a', "https://image.shutterstock.com/image-illustration/beautiful-anime-boy-character-background-260nw-1986627173.jpg")
+// app.loader.add('a', "https://image.shutterstock.com/image-illustration/beautiful-anime-boy-character-background-260nw-1986627173.jpg")
+
+app.loader.add('a', "../assets/download.jpg")
 .load((l, r) => {
     const img = new Sprite(r.a.texture)
     // img.anchor.set(0, 0)
