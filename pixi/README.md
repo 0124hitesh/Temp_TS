@@ -13,3 +13,5 @@ yarn build
 ```
 
 to bundle your application
+
+to add assets configure "webpack.config.js"
