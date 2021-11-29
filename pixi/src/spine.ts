@@ -18,16 +18,23 @@ app.loader.add("spineHero", "../assets/spine-hero/hero.json")
     sh.state.setAnimation(5, "idle", true)
     app.stage.addChild(sh)
 
+    var loop: boolean = true;
     window.onkeydown = (e) => {
-        if(e.key == "ArrowUp"){
-            sh.state.setAnimation(5, "attack", true)
-        }
-        else if(e.keyCode === 16){
-            sh.state.setAnimation(5, "run", true)
+        
+        if(loop){
+            if(e.key == "ArrowUp"){
+                sh.state.setAnimation(5, "attack", true)
+                loop = false
+            }
+            else if(e.keyCode === 16){
+                sh.state.setAnimation(5, "run", true)
+                loop = false
+            }
         }
     }
-    // window.onkeyup = (e) => {
-    //     sh.state.setAnimation(5, "idle", true)
-    // }
+    window.onkeyup = (e) => {
+        loop = true;
+        sh.state.setAnimation(5, "idle", true);
+    }
 
 })
