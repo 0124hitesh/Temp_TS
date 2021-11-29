@@ -16,7 +16,7 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
-    entry: './src/index1.ts',
+    entry: './src/spine.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
@@ -30,6 +30,8 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'index.html',
         }),
+
+        new MiniCssExtractPlugin(),
 
         new CleanWebpackPlugin(),
 
