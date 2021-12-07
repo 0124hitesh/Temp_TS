@@ -13,13 +13,10 @@ export class LoaderExam{
         });
 
         LoaderExam.resources = this.loa.resources
-        // this.loa.onComplete.add((e) => {
-        //     LoaderExam.resources = e.resources
-        // })
+        
     }
 
     start(): void{
-    //    console.log(typeof LoaderExam.resources)
        Object.keys(LoaderExam.resources).forEach((e) => {
         // console.log(e, LoaderExam.resources[e])
         console.log(e + " => " + LoaderExam.resources[e].url)
