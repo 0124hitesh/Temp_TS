@@ -16,7 +16,7 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
-    entry: './src/particle.ts',
+    entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
     },

@@ -21,6 +21,10 @@ export class LoaderExam{
         // console.log(e, LoaderExam.resources[e])
         console.log(e + " => " + LoaderExam.resources[e].url)
        })
+
+       Object.keys(this.loa.resources).forEach((e) => {
+            console.log(e + " => " + LoaderExam.resources[e].url)
+       })
     }
 
     
