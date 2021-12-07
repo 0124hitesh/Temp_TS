@@ -1,0 +1,10 @@
+[
+    {
+        "asset" : "css",
+        "path" : "../assets/CSS.css"
+    },
+    {
+        "asset" : "img",
+        "path" : "../assets/z.jpg"
+    }
+]
