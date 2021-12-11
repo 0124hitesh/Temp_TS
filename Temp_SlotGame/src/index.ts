@@ -82,8 +82,9 @@ function spin(con: any): void {
     onComplete: () => {
         console.log("con.y = " + con.y)
         con["children"].forEach((e: any) => {
-            console.log(e.y)
+            e.y += 200
         });
+        con.y = 10
      }
     });
   }
