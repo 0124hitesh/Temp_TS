@@ -1,0 +1,129 @@
+{"frames": {
+
+"h1_neptune.png":
+{
+	"frame": {"x":2,"y":2,"w":212,"h":177},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":212,"h":177},
+	"sourceSize": {"w":212,"h":177},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"h2_siren.png":
+{
+	"frame": {"x":216,"y":2,"w":211,"h":176},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":211,"h":176},
+	"sourceSize": {"w":211,"h":176},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"h3_seahores.png":
+{
+	"frame": {"x":2,"y":181,"w":207,"h":177},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":207,"h":177},
+	"sourceSize": {"w":212,"h":177},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"h4_dolphin.png":
+{
+	"frame": {"x":211,"y":181,"w":212,"h":178},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":212,"h":178},
+	"sourceSize": {"w":212,"h":178},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"h5_treasurebox.png":
+{
+	"frame": {"x":2,"y":361,"w":206,"h":177},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":206,"h":177},
+	"sourceSize": {"w":212,"h":177},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"Royal_9.png":
+{
+	"frame": {"x":210,"y":361,"w":98,"h":143},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":52,"y":24,"w":98,"h":143},
+	"sourceSize": {"w":211,"h":176},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"Royal_10.png":
+{
+	"frame": {"x":310,"y":361,"w":155,"h":132},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":28,"y":22,"w":155,"h":132},
+	"sourceSize": {"w":211,"h":176},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"Royal_A.png":
+{
+	"frame": {"x":2,"y":540,"w":131,"h":122},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":40,"y":27,"w":131,"h":122},
+	"sourceSize": {"w":211,"h":176},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"Royal_J.png":
+{
+	"frame": {"x":135,"y":540,"w":50,"h":132},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":81,"y":22,"w":50,"h":132},
+	"sourceSize": {"w":211,"h":176},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"Royal_K.png":
+{
+	"frame": {"x":187,"y":540,"w":114,"h":123},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":49,"y":27,"w":114,"h":123},
+	"sourceSize": {"w":211,"h":176},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"Royal_Q.png":
+{
+	"frame": {"x":303,"y":540,"w":157,"h":129},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":27,"y":24,"w":157,"h":129},
+	"sourceSize": {"w":211,"h":176},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"scatter.png":
+{
+	"frame": {"x":2,"y":674,"w":212,"h":216},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":212,"h":216},
+	"sourceSize": {"w":212,"h":220},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"wild.png":
+{
+	"frame": {"x":216,"y":674,"w":211,"h":227},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":211,"h":227},
+	"sourceSize": {"w":211,"h":227},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "symbols_atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":467,"h":903},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7d281eac21dcc52c1bfd12db3582abb5:0a8a5d0315cd6a05f18e5c680c5d051b:bc5579a1f656fa1a31a8a78fed696117$"
+}
+}

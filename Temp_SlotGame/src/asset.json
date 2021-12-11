@@ -1,0 +1,14 @@
+[
+    {
+        "asset" : "song",
+        "path" : "../assets/[Songs.PK] Barfi - 03 - Kyon.mp3"
+    },
+    {
+        "asset" : "css",
+        "path" : "../assets/CSS.css"
+    },
+    {
+        "asset" : "img",
+        "path" : "../assets/z.jpg"
+    }
+]
